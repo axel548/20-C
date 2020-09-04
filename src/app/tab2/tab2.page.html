@@ -1,17 +1,25 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-searchbar animated placeholder="Buscar" (ionChange)="buscar($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<!--BEGIN: Ion LIST-->  
+<ion-list>
+  <!--BEGIN: Ion CARD-->
+  <ion-card  *ngFor="let data of noticias">
+    <div class="bloques">
+      <img src="{{data.imagen}}" alt="Imagen" class="imagen">
+      <div class="cuerpo">
+        <a href="#">{{data.titulo}}</a>
+        <p>{{data.empresa}}</p>
+        <i>{{data.hora}}</i>
+      </div>
+    </div>
+  </ion-card>
+  <!--END: Ion CARD-->
+</ion-list>
+<!--END: Ion LIST -->
 </ion-content>

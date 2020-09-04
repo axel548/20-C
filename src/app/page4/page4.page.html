@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>COVID-19</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let data of slider">
+      <img src="{{data.imagen}}"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <img src="assets/img/info.jpg">
+  </ion-card>
+</ion-content>

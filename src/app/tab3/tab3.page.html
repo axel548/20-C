@@ -1,17 +1,47 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>INFORMACIÓN SANITARIA</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!--Síntomas-->
+  <ion-item-group>
+    <ion-item-divider color="secondary">
+      <ion-label>Los síntomas más habituales:</ion-label>
+    </ion-item-divider>
+  
+    <ion-item *ngFor="let data of sintomas_comunes">
+      <ul>
+        <li>{{data.name}}</li>
+      </ul>
+    </ion-item>
+  </ion-item-group>
+  
+  <!--Otros síntomas-->
+  <ion-item-group>
+    <ion-item-divider color="secondary">
+      <ion-label>Otros Síntomas menos comunes:</ion-label>
+    </ion-item-divider>
+  
+    <ion-item *ngFor="let data of sintomas_otro">
+      <ul>
+        <li>{{data.name}}</li>
+      </ul>
+    </ion-item>
+  </ion-item-group>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!--Prevención-->
+  <ion-item-group>
+    <ion-item-divider color="secondary">
+      <ion-label>Prevenciones:</ion-label>
+    </ion-item-divider>
+  
+    <ion-item *ngFor="let data of prevencion">
+      <ul>
+        <li>{{data.name}}</li>
+      </ul>
+    </ion-item>
+  </ion-item-group>
+
 </ion-content>
